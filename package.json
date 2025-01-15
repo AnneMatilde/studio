@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
+  "packageManager": "pnpm@9.15.4",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity dev",
