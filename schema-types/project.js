@@ -20,18 +20,15 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'category',
-      title: 'Category',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Brand Design', value: 'brand-design' },
-          { title: 'Digital Campaign', value: 'digital-campaign' },
-          { title: 'User Interface', value: 'ui' },
-          { title: 'Identity Design', value: 'identity' },
-          { title: 'Packaging', value: 'packaging' }
-        ]
-      }
+      name: 'date',
+      validation: Rule => Rule.required(),
+      title: 'Date',
+      type: 'date',
+    },
+    {
+      name: 'employer',
+      title: 'Employer',
+      type: 'string'
     },
     {
       name: 'client',
@@ -46,46 +43,15 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'mainImage',
-      title: 'Main Image',
-      type: 'image',
-      options: {
-        hotspot: true
-      },
-      fields: [
-        {
-          name: 'alt',
-          title: 'Alt Text',
-          type: 'string',
-          validation: Rule => Rule.required()
-        }
-      ]
-    },
-    {
-      name: 'projectDetails',
-      title: 'Project Details',
+      title: 'Content',
+      name: 'content',
       type: 'array',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            {
-              name: 'detail',
-              title: 'Detail',
-              type: 'string'
-            },
-            {
-              name: 'value',
-              title: 'Value',
-              type: 'string'
-            }
-          ]
-        }
-      ]
+      of: [{ type: 'block' }],
+      validation: Rule => Rule.required()
     },
     {
       name: 'services',
-      title: 'Services Provided',
+      title: 'Services',
       type: 'array',
       of: [{ type: 'string' }],
       options: {
@@ -96,6 +62,15 @@ export default {
       name: 'publishedAt',
       title: 'Published At',
       type: 'datetime'
+    },
+    {
+      name: 'openGraphImage',
+      title: 'Open Graph Image',
+      description: 'Image for social media sharing',
+      type: 'image',
+      options: {
+        hotspot: true
+      },
     },
     {
       name: 'seo',
