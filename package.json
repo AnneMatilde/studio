@@ -4,6 +4,11 @@
   "version": "1.0.0",
   "main": "package.json",
   "packageManager": "pnpm@9.15.4",
+  "pnpm": {
+    "overrides": {
+      "framer-motion": "12.4.2"
+    }
+  },
   "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity dev",

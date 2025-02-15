@@ -43,11 +43,25 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Content',
-      name: 'content',
+      name: 'blocks',
+      title: 'Blocks',
       type: 'array',
-      of: [{ type: 'block' }],
-      validation: Rule => Rule.required()
+      of: [
+        { type: 'image' },
+        {
+          type: 'object',
+          name: 'youtube',
+          title: 'YouTube Video',
+          fields: [
+            {
+              name: 'url',
+              title: 'YouTube URL',
+              type: 'url',
+              validation: Rule => Rule.required()
+            }
+          ]
+        },
+      ]
     },
     {
       name: 'services',
